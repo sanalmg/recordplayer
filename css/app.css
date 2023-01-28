@@ -1,0 +1,114 @@
+/*
+Author: Sanal MG (hedraCoder)
+Version: 1.0
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Monoton&family=Roboto:wght@300;400&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --retro-red: #F25B21;
+    --retro-dark:#422240;
+    --retro-blue: #4285B0;
+    --retro-dark-blue: #2F638B;
+    --retro-yellow: #DDB107;
+    --retro-yelow-alt: #C7C011;
+    --button-color: #FE474C;
+    --bungee-font: 'Bungee Inline', cursive;
+    --monoton-font: 'Monoton', cursive;
+    --roboto-font: 'Roboto', sans-serif;
+    --smooth-transit: all 0.3s ease-in-out;
+}
+body {
+    font-family: var(--roboto-font);
+}
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--retro-red);
+    transition: var(--smooth-transit);
+}
+.header {
+    min-height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+.icon-btn {
+    font-size: 25px;
+    color: #fff;
+    transition: var(--smooth-transit);
+}
+.icon-btn:hover {
+    text-decoration: none;
+    color: #000;
+}
+.icon-btn.alt:hover {
+    color: var(--retro-red);
+}
+
+.collections {
+    width: 400px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    background-color: var(--retro-dark);
+    transition: var(--smooth-transit);
+    padding: 1.5rem;
+}
+.collections.on {
+    right: 0;
+}
+.ribbon {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+.ribbon-head {
+    font-size: 3rem;
+    color: #fff;
+    font-family: var(--bungee-font);
+    display: inline-block;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+.ribbon-head::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 41%;
+    left: 0;
+    top: 0;
+    background-color: var(--retro-yellow);
+    z-index: -1;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.ribbon-head::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 59%;
+    right: 0;
+    top: 0;
+    background-color: var(--retro-dark);
+    z-index: -1;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.ribbon-head span {
+    font-family: var(--monoton-font);
+}
+@media(min-width: 991px) {
+    
+}
+
