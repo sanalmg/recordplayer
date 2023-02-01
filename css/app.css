@@ -29,9 +29,8 @@ body {
 }
 .wrapper {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--retro-red);
-    transition: var(--smooth-transit);
 }
 .header {
     min-height: 50px;
@@ -172,8 +171,119 @@ body {
 .img-cover {
     object-fit: cover;
 }
+.player-wrapper {
+    width: 100vw;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.player-case {
+    width: 900px;
+    height: 600px;
+    background-color: var(--retro-blue);
+    border-radius: 30px;
+    border: 20px solid var(--retro-dark-blue);
+    position: relative;
+}
+.case-screw-1,
+.case-screw-2,
+.case-screw-3,
+.case-screw-4 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #D5D2CD;
+}
+.case-screw-1 {
+    top: 20px;
+    left: 20px;
+}
 
+.case-screw-2 {
+    top: 20px;
+    right: 20px;
+}
+
+.case-screw-3 {
+    bottom: 20px;
+    right: 20px;
+}
+.case-screw-4 {
+    bottom: 20px;
+    left: 20px;
+}
+.player-mechanism {
+    width: 100%;
+    height: 100%;
+    padding: 0 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.disc-slot, .disc, .disc-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.disc-slot {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: var(--retro-dark-blue);
+}
+.disc {
+    width: 470px;
+    height: 470px;
+    border-radius: 50%;
+    background-image: radial-gradient(#744071 0%, #673864 20%, #5d325a 50%, #3A1D38 100%);
+    position: relative;
+    transition: var(--smooth-transit);
+}
+.disc::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle at center,rgba(0,0,0,0.7) 4px,transparent 8px);
+}
+.disc.playing {
+    animation: spin 1.8s infinite linear;
+}
+.disc.playing:hover {
+    animation-play-state: paused;
+}
+.disc-inner {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 4;
+    background-color: #FE474C;
+    background-image: url('/assets/images/everybody.png');
+    background-size: cover;
+}
+.disc-hole {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+}
 @media(min-width: 991px) {
     
 }
 
+
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
