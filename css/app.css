@@ -207,7 +207,6 @@ body {
 }
 .player-mechanism {
     width: 600px;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -318,7 +317,7 @@ body {
 .indicator.on {
     background-color: #18E801;
 }
-.power-btn {
+.power-btn, .pause-btn {
     display: inline-block;
     padding: 1.2rem 0.8rem;
     background-color: #DFE8EF;
@@ -326,17 +325,23 @@ body {
     box-shadow: 3px 4px rgba(0,0,0,0.15);
     border-radius: 6px;
     transition: var(--smooth-transit);
-    color: var(--retro-dark-blue);
+    color: var(--retro-red);
     font-size: 1.2rem;
+    cursor: pointer;}
+
+.pause-btn {
+    padding: 1.2rem 1rem;   
+    color: var(--retro-blue);
 }
-.power-btn:active {
-    box-shadow: none;
+.power-btn.on, .power-btn:active {
     color: #069961;
-}
-.power-btn.on {
-    color: #069961;
     box-shadow: none;
 }
+.pause-btn.paused, .pause-btn:active {
+    color: var(--retro-red);
+    box-shadow: none;
+}
+
 @media(min-width: 991px) {
     
 }
